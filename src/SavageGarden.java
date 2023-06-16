@@ -6,7 +6,7 @@ public class SavageGarden extends Main {
     static Menu menu = new Menu();
     LinkedList<ArrayList<String>> sg= TownHall.sg;
     
-    protected static void savage(){
+    protected static void savage(LinkedList<ArrayList<String>> sg){
         num=1;
         System.out.println("["+num+"] Move to:");
         num++;

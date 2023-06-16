@@ -178,9 +178,9 @@ public class MoodyBlue extends Main{
         double totalPrice = 0.0;
 
         for (ArrayList<Object> record : salesRecord) {
-            String recordDay = (String) record.get(0);
-            String food = (String) record.get(2);
-            String price = (String) record.get(3);
+            String recordDay = record.get(0).toString();
+            String food = record.get(2).toString();
+            String price = record.get(3).toString();
 
             // Check if the record day matches the specified day
             if (recordDay.equals(day)) {

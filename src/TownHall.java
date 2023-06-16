@@ -118,7 +118,6 @@ public class TownHall extends Main {
                 saveFile.add(map);
                 saveFile.add(visitedLoc);
                 saveFile.add(salesR);
-
                 try(FileWriter writer = new FileWriter(fileName)){
                     writer.write(saveFile.toJSONString());
                     writer.flush();
@@ -179,15 +178,6 @@ public class TownHall extends Main {
             tt= wl.ttWaitList(1);
             lb= wl.lWaitList(1);
             sg= wl.sgWaitList(1);
-            rawRecord.clear();
-            rawRecord.addAll(jg);
-            rawRecord.addAll(cdm);
-            rawRecord.addAll(tt);
-            rawRecord.addAll(lb);
-            rawRecord.addAll(sg);
-            extractInfo();
-            makePrice();
-            storeSales();
         }
     }
 }

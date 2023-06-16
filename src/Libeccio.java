@@ -6,7 +6,7 @@ public class Libeccio extends Main {
     static Menu menu = new Menu();
     LinkedList<ArrayList<String>> lb= TownHall.lb;
     
-    protected static void libeccio(){
+    protected static void libeccio(LinkedList<ArrayList<String>> lb){
         num=1;
         System.out.println("["+num+"] Move to:");
         num++;
