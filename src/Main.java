@@ -18,13 +18,13 @@ public class Main {
     protected static List<Location> locations= new ArrayList<>();
     protected static int mapSelection = 0;
     private static ArrayList<String> temp = new ArrayList<>();
+    static boolean isLoad = false;
     
     public static void main(String[] args) {
         System.out.println("Welcome to the fantastical realm of JOJOLands.");
         System.out.println("[1] Start Game\n[2] Load Game\n[3] Exit\n");
         System.out.print("Select: ");
         Scanner sc = new Scanner(System.in);
-        boolean isLoad = false;
         int keyIn = sc.nextInt();
         if(keyIn == 3){
             System.out.println("Exiting the Game...");
@@ -36,104 +36,101 @@ public class Main {
             String fileName = sc.nextLine();
             setLoadedGame(fileName);
             isLoad = true;
-            keyIn = 1;
         }
         System.out.println("========================================================================");
-        if (keyIn == 1) {
-            if (mapSelection == 0) {
-                System.out.println("Select a map: ");
-                System.out.println("[1] Default Map\n[2] Parallel Map\n[3] Alternate Map\n");
-                System.out.print("Select: ");
-                mapSelection = sc.nextInt();
-                System.out.println("========================================================================");
-            }
-            switch (mapSelection) {
-                case 1 -> setDefault();
-                case 2 -> setParallel();
-                case 3 -> setAlternate();
-            }
-            System.out.println("It's Day " + (currentDay) + " (" + getDayOfWeek(currentDay) + ") of our journey in JOJOLands!");
-            currentLocation = townHall;
-            setMenu();
-            if (!temp.isEmpty()) {
-                for (int i = 0; i < temp.size(); i++) {
-                    for(int j = 0; j < locations.size(); j++){
-                        if(locations.get(j).isLoc(temp.get(i))){
-                            visit.addLast(locations.get(j));
-                            break;
-                        }
+        if (mapSelection == 0) {
+            System.out.println("Select a map: ");
+            System.out.println("[1] Default Map\n[2] Parallel Map\n[3] Alternate Map\n");
+            System.out.print("Select: ");
+            mapSelection = sc.nextInt();
+            System.out.println("========================================================================");
+        }
+        switch (mapSelection) {
+            case 1 -> setDefault();
+            case 2 -> setParallel();
+            case 3 -> setAlternate();
+        }
+        System.out.println("It's Day " + (currentDay) + " (" + getDayOfWeek(currentDay) + ") of our journey in JOJOLands!");
+        currentLocation = townHall;
+        setMenu();
+        if (isLoad) {
+            for (int i = 0; i < temp.size(); i++) {
+                for(int j = 0; j < locations.size(); j++){
+                    if(locations.get(j).isLoc(temp.get(i))){
+                        visit.addLast(locations.get(j));
+                        break;
                     }
                 }
-            } else visit.addFirst(townHall);
-            setPrice();
-            WaitList wl = new WaitList();
-            LinkedList<ArrayList<String>> jg = new LinkedList<>();
-            LinkedList<ArrayList<String>> cdm = new LinkedList<>();
-            LinkedList<ArrayList<String>> tt = new LinkedList<>();
-            LinkedList<ArrayList<String>> lb = new LinkedList<>();
-            LinkedList<ArrayList<String>> sg = new LinkedList<>();
-            if(!isLoad){
-                jg = wl.jgWaitList(1);
-                cdm = wl.cdmWaitList(1);
-                tt = wl.ttWaitList(1);
-                lb = wl.lWaitList(1);
-                sg = wl.sgWaitList(1);
-                rawRecord.clear();
-                rawRecord.addAll(jg);
-                rawRecord.addAll(cdm);
-                rawRecord.addAll(tt);
-                rawRecord.addAll(lb);
-                rawRecord.addAll(sg);
-                extractInfo();
-                makePrice();
-                storeSales();
             }
+        } else visit.addFirst(townHall);
+        setPrice();
+        WaitList wl = new WaitList();
+        LinkedList<ArrayList<String>> jg = new LinkedList<>();
+        LinkedList<ArrayList<String>> cdm = new LinkedList<>();
+        LinkedList<ArrayList<String>> tt = new LinkedList<>();
+        LinkedList<ArrayList<String>> lb = new LinkedList<>();
+        LinkedList<ArrayList<String>> sg = new LinkedList<>();
+        if(!isLoad){
+            jg = wl.jgWaitList(1);
+            cdm = wl.cdmWaitList(1);
+            tt = wl.ttWaitList(1);
+            lb = wl.lWaitList(1);
+            sg = wl.sgWaitList(1);
+            rawRecord.clear();
+            rawRecord.addAll(jg);
+            rawRecord.addAll(cdm);
+            rawRecord.addAll(tt);
+            rawRecord.addAll(lb);
+            rawRecord.addAll(sg);
+            extractInfo();
+            makePrice();
+            storeSales();
+        }
 
-            while (true) {
-                System.out.println("Current location: " + currentLocation.getName());
-                if (currentLocation.getName().equals("Morioh Grand Hotel")) {
-                    MoriohGrandHotel hotel = new MoriohGrandHotel();
-                    hotel.morioh();
-                } else if (currentLocation.getName().equals("Trattoria Trussardi")) {
-                    TrattoriaTrussardi trattoria = new TrattoriaTrussardi();
-                    trattoria.trattoria(tt);
-                } else if (currentLocation.getName().equals("Town Hall")) {
-                    TownHall hall = new TownHall();
-                    hall.hall();
-                } else if (currentLocation.getName().equals("Cafe Deux Magots")) {
-                    CafeDeuxMagots cafe = new CafeDeuxMagots();
-                    cafe.cafe(cdm);
-                } else if (currentLocation.getName().equals("Polnareff Land")) {
-                    PolnareffLand polnareff = new PolnareffLand();
-                    polnareff.polnareff();
-                } else if (currentLocation.getName().equals("Savage Garden")) {
-                    SavageGarden savage = new SavageGarden();
-                    savage.savage(sg);
-                } else if (currentLocation.getName().equals("Green Dolphin Street Prison")) {
-                    GreenDolphinStreetPrison prison = new GreenDolphinStreetPrison();
-                    prison.greendolphin(locations);
-                } else if (currentLocation.getName().equals("DIO's Mansion")) {
-                    DiosMansion dios = new DiosMansion();
-                    dios.dio();
-                } else if (currentLocation.getName().equals("Jade Garden")) {
-                    JadeGarden jade = new JadeGarden();
-                    jade.jade(jg);
-                } else if (currentLocation.getName().equals("Joestar Mansion")) {
-                    JoestarMansion joe = new JoestarMansion();
-                    joe.joestar();
-                } else if (currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")) {
-                    Libeccio lib = new Libeccio();
-                    lib.libeccio(lb);
-                } else if (currentLocation.getName().equals("San Giorgio Maggiore")) {
-                    SanGiorgioMaggiore San = new SanGiorgioMaggiore();
-                    San.sangiorgio();
-                } else if (currentLocation.getName().equals("Vineyard")) {
-                    Vineyard vin = new Vineyard();
-                    vin.vineyard();
-                } else if (currentLocation.getName().equals("Angelo Rock")) {
-                    AngeloRock angelo = new AngeloRock();
-                    angelo.angeloRock();
-                }
+        while (true) {
+            System.out.println("Current location: " + currentLocation.getName());
+            if (currentLocation.getName().equals("Morioh Grand Hotel")) {
+                MoriohGrandHotel hotel = new MoriohGrandHotel();
+                hotel.morioh();
+            } else if (currentLocation.getName().equals("Trattoria Trussardi")) {
+                TrattoriaTrussardi trattoria = new TrattoriaTrussardi();
+                trattoria.trattoria(tt);
+            } else if (currentLocation.getName().equals("Town Hall")) {
+                TownHall hall = new TownHall();
+                hall.hall();
+            } else if (currentLocation.getName().equals("Cafe Deux Magots")) {
+                CafeDeuxMagots cafe = new CafeDeuxMagots();
+                cafe.cafe(cdm);
+            } else if (currentLocation.getName().equals("Polnareff Land")) {
+                PolnareffLand polnareff = new PolnareffLand();
+                polnareff.polnareff();
+            } else if (currentLocation.getName().equals("Savage Garden")) {
+                SavageGarden savage = new SavageGarden();
+                savage.savage(sg);
+            } else if (currentLocation.getName().equals("Green Dolphin Street Prison")) {
+                GreenDolphinStreetPrison prison = new GreenDolphinStreetPrison();
+                prison.greendolphin(locations);
+            } else if (currentLocation.getName().equals("DIO's Mansion")) {
+                DiosMansion dios = new DiosMansion();
+                dios.dio();
+            } else if (currentLocation.getName().equals("Jade Garden")) {
+                JadeGarden jade = new JadeGarden();
+                jade.jade(jg);
+            } else if (currentLocation.getName().equals("Joestar Mansion")) {
+                JoestarMansion joe = new JoestarMansion();
+                joe.joestar();
+            } else if (currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")) {
+                Libeccio lib = new Libeccio();
+                lib.libeccio(lb);
+            } else if (currentLocation.getName().equals("San Giorgio Maggiore")) {
+                SanGiorgioMaggiore San = new SanGiorgioMaggiore();
+                San.sangiorgio();
+            } else if (currentLocation.getName().equals("Vineyard")) {
+                Vineyard vin = new Vineyard();
+                vin.vineyard();
+            } else if (currentLocation.getName().equals("Angelo Rock")) {
+                AngeloRock angelo = new AngeloRock();
+                angelo.angeloRock();
             }
         }
     }
