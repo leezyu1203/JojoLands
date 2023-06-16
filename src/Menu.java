@@ -407,9 +407,6 @@ public class Menu extends Main{
                         break; 
                     }
                 }
-                
-                
-                
             }
             if(currentLocation.getName().equals("Savage Garden")){
                 if (MilagroPrices.containsKey(foodModName)){
@@ -425,9 +422,6 @@ public class Menu extends Main{
                         break; 
                     }
                 }
-                
-                
-                
             }
             if(currentLocation.getName().equals("Jade Garden")){
                 if (MilagroPrices.containsKey(foodModName)){
@@ -443,9 +437,6 @@ public class Menu extends Main{
                         break; 
                     }
                 }
-                
-                
-                
             }
             if(currentLocation.getName().equals("Libeccio")){
                 if (MilagroPrices.containsKey(foodModName)){
@@ -461,9 +452,6 @@ public class Menu extends Main{
                         break; 
                     }
                 }
-                
-                
-                
             }
             if(currentLocation.getName().equals("Cafe Deux Magots")){
                 if (MilagroPrices.containsKey(foodModName)){
@@ -484,8 +472,8 @@ public class Menu extends Main{
     public static void milagroPriceSet(String startDay, String endDay) {
         for (ArrayList<Object> row : extractRecord) {
             String recordDay = (String) row.get(0);
-            String food = (String) row.get(2);
-            String price = (String) MilagroPrices.getOrDefault(food, "Price not found");
+            String food = row.get(2).toString();
+            String price = MilagroPrices.getOrDefault(food, "Price not found").toString();
 
             if (recordDay.compareTo(startDay) >= 0 && recordDay.compareTo(endDay) <= 0) {
                 ArrayList<Object> extractedRecord = new ArrayList<>();

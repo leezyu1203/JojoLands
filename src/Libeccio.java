@@ -73,7 +73,7 @@ public class Libeccio extends Main {
             System.out.println("[2] Remove existing food");
             System.out.println("[3] Modify food");
             System.out.println("[4] Exit");
-            System.out.print("Select :");
+            System.out.print("Select: ");
             Scanner sc4 = new Scanner(System.in);
             int selectMenu = sc4.nextInt();
             

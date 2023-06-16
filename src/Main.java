@@ -18,9 +18,9 @@ public class Main {
     protected static List<Location> locations= new ArrayList<>();
     protected static int mapSelection = 0;
     private static ArrayList<String> temp = new ArrayList<>();
-    static boolean isLoad = false;
     
     public static void main(String[] args) {
+        boolean isLoad = false;
         System.out.println("Welcome to the fantastical realm of JOJOLands.");
         System.out.println("[1] Start Game\n[2] Load Game\n[3] Exit\n");
         System.out.print("Select: ");
@@ -35,6 +35,7 @@ public class Main {
             System.out.print("Enter the path of your save file: ");
             String fileName = sc.nextLine();
             setLoadedGame(fileName);
+            setWaitingL(fileName);
             isLoad = true;
         }
         System.out.println("========================================================================");
@@ -66,6 +67,23 @@ public class Main {
             }
         } else visit.addFirst(townHall);
         setPrice();
+        if(!isLoad) {
+            WaitList wl = new WaitList();
+            TownHall.jg = wl.jgWaitList(1);
+            TownHall.cdm = wl.cdmWaitList(1);
+            TownHall.tt = wl.ttWaitList(1);
+            TownHall.lb = wl.lWaitList(1);
+            TownHall.sg = wl.sgWaitList(1);
+            rawRecord.clear();
+            rawRecord.addAll(TownHall.jg);
+            rawRecord.addAll(TownHall.cdm);
+            rawRecord.addAll(TownHall.tt);
+            rawRecord.addAll(TownHall.lb);
+            rawRecord.addAll(TownHall.sg);
+            extractInfo();
+            makePrice();
+            storeSales();
+        }
 
         while (true) {
             System.out.println("Current location: " + currentLocation.getName());
@@ -397,8 +415,8 @@ public class Main {
         for (ArrayList<Object> row : extractRecord){
             ArrayList<Object> extractedRecord = new ArrayList<>();
             
-            String food = (String)row.get(2);
-            String price = (String)foodPrices.getOrDefault(food, "Price not found");
+            String food = row.get(2).toString();
+            String price = foodPrices.getOrDefault(food, "Price not found").toString();
             
             extractedRecord.add(row.get(0));
             extractedRecord.add(row.get(1));
@@ -421,7 +439,7 @@ public class Main {
         }
     }
 
-    public static void setLoadedGame(String fileName){
+    private static void setLoadedGame(String fileName){
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader(fileName)) {
             Object obj = jsonParser.parse(reader);
@@ -436,10 +454,9 @@ public class Main {
                 temp.add((String) visitedLoc.get(Character.toString(alphabet)));
                 alphabet++;
             }
-            JSONObject saleR = (JSONObject) savedFile.get(3);
-            int num = 1;
-            while(saleR.containsKey(Integer.toString(num))){
-                String str = (String) saleR.get(Integer.toString(num));
+            JSONObject saleR = (JSONObject) savedFile.get(8);
+            for(int i = 0; i < saleR.size(); i++){
+                String str = (String) saleR.get(Integer.toString(i));
                 String[] arr = str.split(",");
                 ArrayList<Object> tempArr = new ArrayList<>();
                 tempArr.add(Integer.valueOf(arr[0]));
@@ -447,7 +464,74 @@ public class Main {
                 tempArr.add(arr[2]);
                 tempArr.add(Double.valueOf(arr[3]));
                 salesRecord.add(tempArr);
-                num++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void setWaitingL(String fileName){
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(fileName)) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray savedFile = (JSONArray) obj;
+            JSONObject jgWaitingL = (JSONObject) savedFile.get(3);
+            TownHall.jg = new LinkedList<>();
+            for(int i = 0; i < jgWaitingL.size(); i++){
+                String str = (String) jgWaitingL.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                TownHall.jg.add(tempArr);
+            }
+            JSONObject cdmWaitingL = (JSONObject) savedFile.get(4);
+            TownHall.cdm = new LinkedList<>();
+            for(int i = 0; i < cdmWaitingL.size(); i++){
+                String str = (String) cdmWaitingL.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                TownHall.cdm.add(tempArr);
+            }
+            JSONObject ttWaitingL = (JSONObject) savedFile.get(5);
+            TownHall.tt = new LinkedList<>();
+            for(int i = 0; i < ttWaitingL.size(); i++){
+                String str = (String) ttWaitingL.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                TownHall.tt.add(tempArr);
+            }
+            JSONObject lbWaitingL = (JSONObject) savedFile.get(6);
+            TownHall.lb = new LinkedList<>();
+            for(int i = 0; i < lbWaitingL.size(); i++){
+                String str = (String) lbWaitingL.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                TownHall.lb.add(tempArr);
+            }
+            JSONObject sgWaitingL = (JSONObject) savedFile.get(7);
+            TownHall.sg = new LinkedList<>();
+            for(int i = 0; i < sgWaitingL.size(); i++){
+                String str = (String) sgWaitingL.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                TownHall.sg.add(tempArr);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

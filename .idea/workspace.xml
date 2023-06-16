@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279fdca1-25b7-45c8-99a5-340025d54e61" name="Changes" comment="Update Synchronisation of WaitingList and SalesRecord">
+    <list default="true" id="279fdca1-25b7-45c8-99a5-340025d54e61" name="Changes" comment="Update Save ForwardLocation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JojoLands/CafeDeuxMagots.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/CafeDeuxMagots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JojoLands/JadeGarden.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/JadeGarden.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JojoLands/Libeccio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/Libeccio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JojoLands/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JojoLands/SavageGarden.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/SavageGarden.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JojoLands/TownHall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/TownHall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JojoLands/TrattoriaTrussardi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JojoLands/TrattoriaTrussardi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sales.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sales.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CafeDeuxMagots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CafeDeuxMagots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JadeGarden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JadeGarden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Libeccio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libeccio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SavageGarden.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavageGarden.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TownHall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TownHall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TrattoriaTrussardi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrattoriaTrussardi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686909276560</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update Save ForwardLocation">
+      <created>1686910915502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686910915502</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +159,8 @@
     <MESSAGE value="Update Save SalesRecord" />
     <MESSAGE value="Update Load File Condition" />
     <MESSAGE value="Update Synchronisation of WaitingList and SalesRecord" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Synchronisation of WaitingList and SalesRecord" />
+    <MESSAGE value="Update Save ForwardLocation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Save ForwardLocation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,8 @@
 import java.util.*;
 import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.*;
 
 public class TownHall extends Main {
@@ -103,21 +106,69 @@ public class TownHall extends Main {
                     temp = temp.next;
                 } if(visit.forwardLocation != null)
                     visitedLoc.put(alphabet, visit.forwardLocation.getName());
+                JSONObject jgWaitingL = new JSONObject();
+                for(int i = 0; i < jg.size(); i++){
+                    ArrayList<String> jgArr = jg.get(i);
+                    String tempStr = "";
+                    for(int j = 0; j < jgArr.size(); j++){
+                        tempStr += jgArr.get(j) + ",";
+                    }
+                    jgWaitingL.put(Integer.toString(i),tempStr);
+                }
+                JSONObject cdmWaitingL = new JSONObject();
+                for(int i = 0; i < cdm.size(); i++){
+                    ArrayList<String> cdmArr = cdm.get(i);
+                    String tempStr = "";
+                    for(int j = 0; j < cdmArr.size(); j++){
+                        tempStr += cdmArr.get(j) + ",";
+                    }
+                    cdmWaitingL.put(Integer.toString(i),tempStr);
+                }
+                JSONObject ttWaitingL = new JSONObject();
+                for(int i = 0; i < tt.size(); i++){
+                    ArrayList<String> ttArr = tt.get(i);
+                    String tempStr = "";
+                    for(int j = 0; j < ttArr.size(); j++){
+                        tempStr += ttArr.get(j) + ",";
+                    }
+                    ttWaitingL.put(Integer.toString(i),tempStr);
+                }
+                JSONObject lbWaitingL = new JSONObject();
+                for(int i = 0; i < lb.size(); i++){
+                    ArrayList<String> lbArr = lb.get(i);
+                    String tempStr = "";
+                    for(int j = 0; j < lbArr.size(); j++){
+                        tempStr += lbArr.get(j) + ",";
+                    }
+                    lbWaitingL.put(Integer.toString(i),tempStr);
+                }
+                JSONObject sgWaitingL = new JSONObject();
+                for(int i = 0; i < sg.size(); i++){
+                    ArrayList<String> sgArr = sg.get(i);
+                    String tempStr = "";
+                    for(int j = 0; j < sgArr.size(); j++){
+                        tempStr += sgArr.get(j) + ",";
+                    }
+                    sgWaitingL.put(Integer.toString(i),tempStr);
+                }
                 JSONObject salesR = new JSONObject();
-                int num = 1;
                 for(int i = 0; i < Main.salesRecord.size(); i++){
                     ArrayList<Object> tempArr = Main.salesRecord.get(i);
                     String tempStr = "";
                     for(int j = 0; j < tempArr.size(); j++){
                         tempStr += tempArr.get(j).toString() + ",";
                     }
-                    salesR.put(Integer.toString(num),tempStr);
-                    num++;
+                    salesR.put(Integer.toString(i),tempStr);
                 }
                 JSONArray saveFile = new JSONArray();
                 saveFile.add(day);
                 saveFile.add(map);
                 saveFile.add(visitedLoc);
+                saveFile.add(lbWaitingL);
+                saveFile.add(cdmWaitingL);
+                saveFile.add(ttWaitingL);
+                saveFile.add(lbWaitingL);
+                saveFile.add(sgWaitingL);
                 saveFile.add(salesR);
                 try(FileWriter writer = new FileWriter(fileName)){
                     writer.write(saveFile.toJSONString());
@@ -170,24 +221,6 @@ public class TownHall extends Main {
 
             default:
                 System.out.println("Invalid choice. Please try again.");
-        }
-    
-        if(currentDay == 1 && !Main.isLoad){
-            WaitList wl= new WaitList();
-            jg= wl.jgWaitList(1);
-            cdm= wl.cdmWaitList(1);
-            tt= wl.ttWaitList(1);
-            lb= wl.lWaitList(1);
-            sg= wl.sgWaitList(1);
-            rawRecord.clear();
-            rawRecord.addAll(jg);
-            rawRecord.addAll(cdm);
-            rawRecord.addAll(tt);
-            rawRecord.addAll(lb);
-            rawRecord.addAll(sg);
-            extractInfo();
-            makePrice();
-            storeSales();
         }
     }
 }
