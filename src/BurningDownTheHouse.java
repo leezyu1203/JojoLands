@@ -82,7 +82,7 @@ public class BurningDownTheHouse {
     }
     private void display(){
         setPrintOrder();
-        String output = "    â†–";
+        String output = "    ↖";
         Stack<Integer> branchLvl = new Stack<>();
         Stack<Integer> space = new Stack<>();
         while(!printOrder.isEmpty()){
@@ -100,14 +100,14 @@ public class BurningDownTheHouse {
                         output = "";
                         for(int i = 0; i < space.peek()-4; i++){
                             output += " ";
-                        } output += "    â†–";
+                        } output += "    ↖";
                         space.pop();
                         branchLvl.pop();
                     }
                 } if(level.contains(lvl)){
                     branchLvl.push(lvl);
                     space.push(output.length()-1);
-                } output += " â†� " + printOrder.poll().getName();
+                } output += " ← " + printOrder.poll().getName();
             }
         }
         System.out.println(output);
