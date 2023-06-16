@@ -6,7 +6,7 @@ public class TrattoriaTrussardi extends Main {
     static Menu menu = new Menu();
     LinkedList<ArrayList<String>> tt= TownHall.tt;
     
-    protected static void trattoria(LinkedList<ArrayList<String>> tt) {
+    protected static void trattoria() {
         num=1;
         System.out.println("["+num+"] Move to:");
         num++;

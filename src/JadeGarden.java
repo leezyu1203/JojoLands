@@ -5,7 +5,7 @@ public class JadeGarden extends Main {
     static Menu menu = new Menu();
     LinkedList<ArrayList<String>> jg= TownHall.jg;
     
-    protected static void jade(LinkedList<ArrayList<String>> jg){
+    protected static void jade(){
         num=1;
         System.out.println("["+num+"] Move to:");
         num++;

@@ -64,28 +64,6 @@ public class Main {
             }
         } else visit.addFirst(townHall);
         setPrice();
-        WaitList wl = new WaitList();
-        LinkedList<ArrayList<String>> jg = new LinkedList<>();
-        LinkedList<ArrayList<String>> cdm = new LinkedList<>();
-        LinkedList<ArrayList<String>> tt = new LinkedList<>();
-        LinkedList<ArrayList<String>> lb = new LinkedList<>();
-        LinkedList<ArrayList<String>> sg = new LinkedList<>();
-        if(!isLoad){
-            jg = wl.jgWaitList(1);
-            cdm = wl.cdmWaitList(1);
-            tt = wl.ttWaitList(1);
-            lb = wl.lWaitList(1);
-            sg = wl.sgWaitList(1);
-            rawRecord.clear();
-            rawRecord.addAll(jg);
-            rawRecord.addAll(cdm);
-            rawRecord.addAll(tt);
-            rawRecord.addAll(lb);
-            rawRecord.addAll(sg);
-            extractInfo();
-            makePrice();
-            storeSales();
-        }
 
         while (true) {
             System.out.println("Current location: " + currentLocation.getName());
@@ -94,19 +72,19 @@ public class Main {
                 hotel.morioh();
             } else if (currentLocation.getName().equals("Trattoria Trussardi")) {
                 TrattoriaTrussardi trattoria = new TrattoriaTrussardi();
-                trattoria.trattoria(tt);
+                trattoria.trattoria();
             } else if (currentLocation.getName().equals("Town Hall")) {
                 TownHall hall = new TownHall();
                 hall.hall();
             } else if (currentLocation.getName().equals("Cafe Deux Magots")) {
                 CafeDeuxMagots cafe = new CafeDeuxMagots();
-                cafe.cafe(cdm);
+                cafe.cafe();
             } else if (currentLocation.getName().equals("Polnareff Land")) {
                 PolnareffLand polnareff = new PolnareffLand();
                 polnareff.polnareff();
             } else if (currentLocation.getName().equals("Savage Garden")) {
                 SavageGarden savage = new SavageGarden();
-                savage.savage(sg);
+                savage.savage();
             } else if (currentLocation.getName().equals("Green Dolphin Street Prison")) {
                 GreenDolphinStreetPrison prison = new GreenDolphinStreetPrison();
                 prison.greendolphin(locations);
@@ -115,13 +93,13 @@ public class Main {
                 dios.dio();
             } else if (currentLocation.getName().equals("Jade Garden")) {
                 JadeGarden jade = new JadeGarden();
-                jade.jade(jg);
+                jade.jade();
             } else if (currentLocation.getName().equals("Joestar Mansion")) {
                 JoestarMansion joe = new JoestarMansion();
                 joe.joestar();
             } else if (currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")) {
                 Libeccio lib = new Libeccio();
-                lib.libeccio(lb);
+                lib.libeccio();
             } else if (currentLocation.getName().equals("San Giorgio Maggiore")) {
                 SanGiorgioMaggiore San = new SanGiorgioMaggiore();
                 San.sangiorgio();

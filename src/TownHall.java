@@ -171,13 +171,22 @@ public class TownHall extends Main {
                 System.out.println("Invalid choice. Please try again.");
         }
     
-        if(currentDay ==1){
+        if(currentDay == 1 && !Main.isLoad){
             WaitList wl= new WaitList();
             jg= wl.jgWaitList(1);
             cdm= wl.cdmWaitList(1);
             tt= wl.ttWaitList(1);
             lb= wl.lWaitList(1);
             sg= wl.sgWaitList(1);
+            rawRecord.clear();
+            rawRecord.addAll(jg);
+            rawRecord.addAll(cdm);
+            rawRecord.addAll(tt);
+            rawRecord.addAll(lb);
+            rawRecord.addAll(sg);
+            extractInfo();
+            makePrice();
+            storeSales();
         }
     }
 }

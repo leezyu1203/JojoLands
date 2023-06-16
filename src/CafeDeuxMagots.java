@@ -5,7 +5,7 @@ public class CafeDeuxMagots extends Main {
     static Menu menu = new Menu();
     LinkedList<ArrayList<String>> cdm= TownHall.cdm;
     
-    protected static void cafe(LinkedList<ArrayList<String>> cdm){
+    protected static void cafe(){
         num=1;
         System.out.println("["+num+"] Move to:");
         num++;
