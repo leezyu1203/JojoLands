@@ -101,7 +101,8 @@ public class TownHall extends Main {
                     visitedLoc.put(Character.toString(alphabet),temp.location.getName());
                     alphabet++;
                     temp = temp.next;
-                }
+                } if(visit.forwardLocation != null)
+                    visitedLoc.put(alphabet, visit.forwardLocation.getName());
                 JSONObject salesR = new JSONObject();
                 int num = 1;
                 for(int i = 0; i < Main.salesRecord.size(); i++){

@@ -1,56 +1,135 @@
-1 Ungalo Deep-fried Hiroshima Oyster 17.00 
-1 Aya Tsuji Braised Chicken in Black Bean Sauce 15.00 
-1 Guido Mista Deep-fried Hiroshima Oyster 17.00 
-1 Jonathan Joestar Scrambled Egg White with Milk 10.00 
-1 Pesci Scrambled Egg White with Milk 10.00 
-1 Ghiaccio Braised Goose Web with Vermicelli 21.00 
-1 Formaggio Scrambled Egg White with Milk 10.00 
-1 Carne Scrambled Egg White with Milk 10.00 
-1 Reimi Sugimoto Scrambled Egg White with Milk 10.00 
-1 Okuyasu Nijimura Scrambled Egg White with Milk 10.00 
-1 Jolyne Cujoh Braised Goose Web with Vermicelli 21.00 
-1 Prosciutto Braised Chicken in Black Bean Sauce 15.00 
-1 Noriaki Kakyoin Sampling Matured Cheese Platter 23.00 
-1 Diavolo White Asparagus 26.00 
-1 Jean Pierre Polnareff Spring Organic Omelette 23.00 
-1 Sale Spring Lobster Salad 35.00 
-1 Mario Zucchero Sampling Matured Cheese Platter 23.00 
-1 Keicho Nijimura Spring Lobster Salad 35.00 
-1 Tamami Kobayashi Spring Lobster Salad 35.00 
-1 Jotaro Kujo Spring Organic Omelette 23.00 
-1 Donatello Versus Truffle-flavoured Poultry Supreme 34.00 
-1 Akira Otoishi Spring Lobster Salad 35.00 
-1 Suzi Q. White Asparagus 26.00 
-1 Leone Abbacchio White Asparagus 26.00 
-1 Toshikazu Hazamada Creme caramel 6.50 
-1 Pannacotta Fugo Spaghetti alla Puttanesca 15.00 
-1 Anjuro Katagiri Caprese Salad 10.00 
-1 DIO Creme caramel 6.50 
-1 George Joestar II Spaghetti alla Puttanesca 15.00 
-1 Emporio Alnino Lamb Chops with Apple Sauce 25.00 
-1 Shigekiyo Yangu Lamb Chops with Apple Sauce 25.00 
-1 Hayato Kawajiri Spaghetti alla Puttanesca 15.00 
-1 Masazo Kinoto Creme caramel 6.50 
-1 Yukako Yamagishi Creme caramel 6.50 
-1 Mikitaka Hazekura Spaghetti alla Puttanesca 15.00 
-1 Joseph Joestar Spaghetti alla Puttanesca 15.00 
-1 Melone Melone 5.20 
-1 Narciso Anasui Prosciutto and Pesci 20.23 
+1 Anjuro Katagiri Braised Goose Web with Vermicelli 21.00 
+1 Akira Otoishi Braised Goose Web with Vermicelli 21.00 
+1 Mikitaka Hazekura Poached Tofu with Dried Shrimps 12.00 
+1 Masazo Kinoto Poached Tofu with Dried Shrimps 12.00 
+1 Cioccolata Braised Goose Web with Vermicelli 21.00 
+1 Leone Abbacchio Braised Goose Web with Vermicelli 21.00 
+1 Shigekiyo Yangu Poached Tofu with Dried Shrimps 12.00 
+1 Iggy Sampling Matured Cheese Platter 23.00 
+1 Pesci Truffle-flavoured Poultry Supreme 34.00 
+1 Yuya Fungami Spring Lobster Salad 35.00 
+1 Narciso Anasui Sampling Matured Cheese Platter 23.00 
+1 Bruno Bucciarati Sampling Matured Cheese Platter 23.00 
+1 Yukako Yamagishi Spring Lobster Salad 35.00 
+1 Trish Una Truffle-flavoured Poultry Supreme 34.00 
+1 Jonathan Joestar White Asparagus 26.00 
+1 Formaggio Spring Organic Omelette 23.00 
+1 Tizzano White Asparagus 26.00 
+1 Keicho Nijimura Truffle-flavoured Poultry Supreme 34.00 
+1 Giorno Giovanna Creme caramel 6.50 
+1 Vanilla Ice Caprese Salad 10.00 
+1 Koichi Hirose Lamb Chops with Apple Sauce 25.00 
+1 Tamami Kobayashi Creme caramel 6.50 
+1 Foo Fighters Spaghetti alla Puttanesca 15.00 
+1 Ungalo Spaghetti alla Puttanesca 15.00 
+1 Jolyne Cujoh Melone 5.20 
+1 Diavolo Ghiaccio 1.01 
+1 Reimi Sugimoto Risotto 13.14 
+1 Noriaki Kakyoin Prosciutto and Pesci 20.23 
+1 Jean Pierre Polnareff Risotto 13.14 
+1 Toyohiro Kanedaichi Zucchero and Sale 0.60 
+1 Ghiaccio Ghiaccio 1.01 
+1 Melone Risotto 13.14 
 1 Squalo Risotto 13.14 
-1 Yuya Fungami Formaggio 12.50 
-1 Tomoko Higashikata Melone 5.20 
-1 Ermes Costello Risotto 13.14 
-1 Enrico Pucci Formaggio 12.50 
-1 Koichi Hirose Melone 5.20 
-1 Vanilla Ice Joseph's Tequila 35.00 
-1 Tonio Trussardi Abbacchio's Tea 1.00 
-1 Illuso Giorno's Donuts 6.66 
-1 Josuke Higashikata Joseph's Tequila 35.00 
+1 Rikiel Formaggio 12.50 
+1 Narancia Ghirga Zucchero and Sale 0.60 
+1 Yoshihiro Kira Melone 5.20 
+1 Toshikazu Hazamada Zucchero and Sale 0.60 
+1 Ken Oyanagi Kakyoin's Cherry 3.50 
+1 DIO Abbacchio's Tea 1.00 
+1 Mario Zucchero DIO's Bread 36.14 
+1 Jotaro Kujo Giorno's Donuts 6.66 
+1 Enrico Pucci Kakyoin's Cherry 3.50 
+1 Yoshikage Kira Kakyoin's Porridge 4.44 
+1 Anjuro Katagiri Braised Goose Web with Vermicelli 21.00 
+1 Akira Otoishi Braised Goose Web with Vermicelli 21.00 
+1 Mikitaka Hazekura Poached Tofu with Dried Shrimps 12.00 
+1 Masazo Kinoto Poached Tofu with Dried Shrimps 12.00 
+1 Cioccolata Braised Goose Web with Vermicelli 21.00 
+1 Leone Abbacchio Braised Goose Web with Vermicelli 21.00 
+1 Shigekiyo Yangu Poached Tofu with Dried Shrimps 12.00 
+1 Iggy Sampling Matured Cheese Platter 23.00 
+1 Pesci Truffle-flavoured Poultry Supreme 34.00 
+1 Yuya Fungami Spring Lobster Salad 35.00 
+1 Narciso Anasui Sampling Matured Cheese Platter 23.00 
+1 Bruno Bucciarati Sampling Matured Cheese Platter 23.00 
+1 Yukako Yamagishi Spring Lobster Salad 35.00 
+1 Trish Una Truffle-flavoured Poultry Supreme 34.00 
+1 Jonathan Joestar White Asparagus 26.00 
+1 Formaggio Spring Organic Omelette 23.00 
+1 Tizzano White Asparagus 26.00 
+1 Keicho Nijimura Truffle-flavoured Poultry Supreme 34.00 
+1 Giorno Giovanna Creme caramel 6.50 
+1 Vanilla Ice Caprese Salad 10.00 
+1 Koichi Hirose Lamb Chops with Apple Sauce 25.00 
+1 Tamami Kobayashi Creme caramel 6.50 
+1 Foo Fighters Spaghetti alla Puttanesca 15.00 
+1 Ungalo Spaghetti alla Puttanesca 15.00 
+1 Jolyne Cujoh Melone 5.20 
+1 Diavolo Ghiaccio 1.01 
+1 Reimi Sugimoto Risotto 13.14 
+1 Noriaki Kakyoin Prosciutto and Pesci 20.23 
+1 Jean Pierre Polnareff Risotto 13.14 
+1 Toyohiro Kanedaichi Zucchero and Sale 0.60 
+1 Ghiaccio Ghiaccio 1.01 
+1 Melone Risotto 13.14 
+1 Squalo Risotto 13.14 
+1 Rikiel Formaggio 12.50 
+1 Narancia Ghirga Zucchero and Sale 0.60 
+1 Yoshihiro Kira Melone 5.20 
+1 Toshikazu Hazamada Zucchero and Sale 0.60 
+1 Ken Oyanagi Kakyoin's Cherry 3.50 
+1 DIO Abbacchio's Tea 1.00 
+1 Mario Zucchero DIO's Bread 36.14 
+1 Jotaro Kujo Giorno's Donuts 6.66 
+1 Enrico Pucci Kakyoin's Cherry 3.50 
+1 Yoshikage Kira Kakyoin's Porridge 4.44 
+1 Melone Scrambled Egg White with Milk 10.00 
+1 Toshikazu Hazamada Braised Goose Web with Vermicelli 21.00 
+1 Koichi Hirose Scrambled Egg White with Milk 10.00 
+1 Enrico Pucci Deep-fried Hiroshima Oyster 17.00 
+1 Yukako Yamagishi Braised Chicken in Black Bean Sauce 15.00 
+1 Erina Pendleton Deep-fried Hiroshima Oyster 17.00 
+1 Lisa Lisa Scrambled Egg White with Milk 10.00 
+1 Narciso Anasui Poached Tofu with Dried Shrimps 12.00 
+1 Keicho Nijimura Braised Chicken in Black Bean Sauce 15.00 
+1 Josuke Higashikata Spring Organic Omelette 23.00 
+1 Tonio Trussardi Spring Lobster Salad 35.00 
+1 Jolyne Cujoh Spring Organic Omelette 23.00 
+1 Squalo Sampling Matured Cheese Platter 23.00 
+1 Jonathan Joestar White Asparagus 26.00 
+1 Aya Tsuji Sampling Matured Cheese Platter 23.00 
+1 Enya the Hag Sampling Matured Cheese Platter 23.00 
+1 Mikitaka Hazekura Sampling Matured Cheese Platter 23.00 
+1 Okuyasu Nijimura Creme caramel 6.50 
+1 Donatello Versus Lamb Chops with Apple Sauce 25.00 
+1 Sale Lamb Chops with Apple Sauce 25.00 
+1 Suzi Q. Spaghetti alla Puttanesca 15.00 
+1 Yoshikage Kira Lamb Chops with Apple Sauce 25.00 
+1 Terunosuke Miyamoto Lamb Chops with Apple Sauce 25.00 
+1 Anjuro Katagiri Caprese Salad 10.00 
+1 Trish Una Creme caramel 6.50 
+1 DIO Lamb Chops with Apple Sauce 25.00 
+1 Mario Zucchero Lamb Chops with Apple Sauce 25.00 
+1 Tizzano Creme caramel 6.50 
+1 Rikiel Creme caramel 6.50 
+1 Holy Kujo Melone 5.20 
+1 Ghiaccio Formaggio 12.50 
+1 Guido Mista Zucchero and Sale 0.60 
+1 Reimi Sugimoto Melone 5.20 
+1 Foo Fighters Ghiaccio 1.01 
+1 Pannacotta Fugo Prosciutto and Pesci 20.23 
+1 Jean Pierre Polnareff Prosciutto and Pesci 20.23 
+1 Rohan Kishibe Abbacchio's Tea 1.00 
+1 Narancia Ghirga Kakyoin's Cherry 3.50 
+1 Vanilla Ice Abbacchio's Tea 1.00 
+1 Diavolo Kakyoin's Cherry 3.50 
+1 Bruno Bucciarati Joseph's Tequila 35.00 
 1 Weather Report Abbacchio's Tea 1.00 
-1 Risotto Nero Giorno's Donuts 6.66 
-1 Rikiel Joseph's Tequila 35.00 
-1 Erina Pendleton Joseph's Tequila 35.00 
-1 Foo Fighters DIO's Bread 36.14 
-1 Iggy Kakyoin's Cherry 3.50 
-1 Yoshikage Kira Joseph's Tequila 35.00 
-1 Cioccolata Kakyoin's Cherry 3.50 
+1 Masazo Kinoto Kakyoin's Cherry 3.50 
+1 Yuya Fungami Abbacchio's Tea 1.00 
+1 Formaggio Abbacchio's Tea 1.00 
+1 George Joestar II Giorno's Donuts 6.66 
+1 Yoshihiro Kira Abbacchio's Tea 1.00 
+1 Shigekiyo Yangu Joseph's Tequila 35.00 
+1 Leone Abbacchio Kakyoin's Cherry 3.50 

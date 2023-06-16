@@ -57,7 +57,9 @@ public class Main {
             for (int i = 0; i < temp.size(); i++) {
                 for(int j = 0; j < locations.size(); j++){
                     if(locations.get(j).isLoc(temp.get(i))){
-                        visit.addLast(locations.get(j));
+                        if(i == temp.size()-1 && temp.get(i-1).equals("Town Hall"))
+                            visit.forwardLocation = locations.get(j);
+                        else visit.addLast(locations.get(j));
                         break;
                     }
                 }
