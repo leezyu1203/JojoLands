@@ -42,6 +42,7 @@ public class Main {
                 } else if(select != 1){
                     System.out.println();
                     System.out.println("*Invalid input. Please enter from 1 to 3.*");
+                    System.out.println();
                 } else break;
             } else{
                 System.out.println();
@@ -53,8 +54,21 @@ public class Main {
         if (mapSelection == 0) {
             System.out.println("Select a map: ");
             System.out.println("[1] Default Map\n[2] Parallel Map\n[3] Alternate Map\n");
-            System.out.print("Select: ");
-            mapSelection = sc.nextInt();
+            while(true){
+                System.out.print("Select: ");
+                if(sc.hasNextInt()){
+                    mapSelection = sc.nextInt();
+                    if(mapSelection != 1 && mapSelection != 2 && mapSelection != 3){
+                        System.out.println();
+                        System.out.println("*Invalid input. Please enter from 1 to 3.*");
+                        System.out.println();
+                    } else break;
+                } else{
+                    System.out.println();
+                    System.out.println("*Invalid input. Please enter a numeric value.*\n");
+                    sc.next();
+                }
+            }
             System.out.println("========================================================================");
         }
         switch (mapSelection) {
