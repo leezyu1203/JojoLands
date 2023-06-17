@@ -541,6 +541,70 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    private static void loadMenu(String fileName){
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader(fileName)) {
+            Object obj = jsonParser.parse(reader);
+            JSONArray savedFile = (JSONArray) obj;
+            JSONObject jgMenu = (JSONObject) savedFile.get(9);
+            for(int i = 0; i < jgMenu.size(); i++){
+                String str = (String) jgMenu.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                jadeGardenFood.add(tempArr);
+            }
+            JSONObject cdmMenu = (JSONObject) savedFile.get(10);
+            for(int i = 0; i < cdmMenu.size(); i++){
+                String str = (String) cdmMenu.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                cafeMagotsFood.add(tempArr);
+            }
+            JSONObject ttMenu = (JSONObject) savedFile.get(11);
+            for(int i = 0; i < ttMenu.size(); i++){
+                String str = (String) ttMenu.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                trattoriaFood.add(tempArr);
+            }
+            JSONObject lbMenu = (JSONObject) savedFile.get(12);
+            for(int i = 0; i < lbMenu.size(); i++){
+                String str = (String) lbMenu.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                liberrioFood.add(tempArr);
+            }
+            JSONObject sgMenu = (JSONObject) savedFile.get(7);
+            for(int i = 0; i < sgMenu.size(); i++){
+                String str = (String) sgMenu.get(Integer.toString(i));
+                String[] arr = str.split(",");
+                ArrayList<String> tempArr = new ArrayList<>();
+                for(int j = 0; j < arr.length; j++){
+                    tempArr.add(arr[j]);
+                }
+                savageGardenFood.add(tempArr);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

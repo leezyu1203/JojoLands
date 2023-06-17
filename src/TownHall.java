@@ -93,89 +93,7 @@ public class TownHall extends Main {
             case 3:
                 System.out.print("Enter a path to save the game: ");
                 String fileName = sc.nextLine();
-                JSONObject day = new JSONObject();
-                day.put("currentDay",Integer.toString(currentDay));
-                JSONObject map = new JSONObject();
-                map.put("mapSelection",Integer.toString(mapSelection));
-                JSONObject visitedLoc = new JSONObject();
-                Node<Location> temp = visit.head;
-                char alphabet = 'A';
-                while(temp != null){
-                    visitedLoc.put(Character.toString(alphabet),temp.location.getName());
-                    alphabet++;
-                    temp = temp.next;
-                } if(visit.forwardLocation != null)
-                    visitedLoc.put(alphabet, visit.forwardLocation.getName());
-                JSONObject jgWaitingL = new JSONObject();
-                for(int i = 0; i < jg.size(); i++){
-                    ArrayList<String> jgArr = jg.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < jgArr.size(); j++){
-                        tempStr += jgArr.get(j) + ",";
-                    }
-                    jgWaitingL.put(Integer.toString(i),tempStr);
-                }
-                JSONObject cdmWaitingL = new JSONObject();
-                for(int i = 0; i < cdm.size(); i++){
-                    ArrayList<String> cdmArr = cdm.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < cdmArr.size(); j++){
-                        tempStr += cdmArr.get(j) + ",";
-                    }
-                    cdmWaitingL.put(Integer.toString(i),tempStr);
-                }
-                JSONObject ttWaitingL = new JSONObject();
-                for(int i = 0; i < tt.size(); i++){
-                    ArrayList<String> ttArr = tt.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < ttArr.size(); j++){
-                        tempStr += ttArr.get(j) + ",";
-                    }
-                    ttWaitingL.put(Integer.toString(i),tempStr);
-                }
-                JSONObject lbWaitingL = new JSONObject();
-                for(int i = 0; i < lb.size(); i++){
-                    ArrayList<String> lbArr = lb.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < lbArr.size(); j++){
-                        tempStr += lbArr.get(j) + ",";
-                    }
-                    lbWaitingL.put(Integer.toString(i),tempStr);
-                }
-                JSONObject sgWaitingL = new JSONObject();
-                for(int i = 0; i < sg.size(); i++){
-                    ArrayList<String> sgArr = sg.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < sgArr.size(); j++){
-                        tempStr += sgArr.get(j) + ",";
-                    }
-                    sgWaitingL.put(Integer.toString(i),tempStr);
-                }
-                JSONObject salesR = new JSONObject();
-                for(int i = 0; i < Main.salesRecord.size(); i++){
-                    ArrayList<Object> tempArr = Main.salesRecord.get(i);
-                    String tempStr = "";
-                    for(int j = 0; j < tempArr.size(); j++){
-                        tempStr += tempArr.get(j).toString() + ",";
-                    }
-                    salesR.put(Integer.toString(i),tempStr);
-                }
-                JSONArray saveFile = new JSONArray();
-                saveFile.add(day);
-                saveFile.add(map);
-                saveFile.add(visitedLoc);
-                saveFile.add(lbWaitingL);
-                saveFile.add(cdmWaitingL);
-                saveFile.add(ttWaitingL);
-                saveFile.add(lbWaitingL);
-                saveFile.add(sgWaitingL);
-                saveFile.add(salesR);
-                try(FileWriter writer = new FileWriter(fileName)){
-                    writer.write(saveFile.toJSONString());
-                    writer.flush();
-                } catch (IOException e){
-                    e.printStackTrace();
-                }
+                saveFile(fileName);
                 System.out.println("Saving the game...");
                 System.out.println("See you next time. Goodbye!");
                 System.exit(0);
@@ -222,5 +140,72 @@ public class TownHall extends Main {
             default:
                 System.out.println("Invalid choice. Please try again.");
         }
+    }
+
+    private static void saveFile(String fileName){
+        JSONObject day = new JSONObject();
+        day.put("currentDay",Integer.toString(currentDay));
+        JSONObject map = new JSONObject();
+        map.put("mapSelection",Integer.toString(mapSelection));
+        JSONObject visitedLoc = new JSONObject();
+        Node<Location> temp = visit.head;
+        char alphabet = 'A';
+        while(temp != null){
+            visitedLoc.put(Character.toString(alphabet),temp.location.getName());
+            alphabet++;
+            temp = temp.next;
+        } if(visit.forwardLocation != null)
+            visitedLoc.put(alphabet, visit.forwardLocation.getName());
+
+        JSONObject waitingL = new JSONObject();
+        waitingL.put("jgWaitingL", saveLinkedList(jg));
+        waitingL.put("cdmWaitingL", saveLinkedList(cdm));
+        waitingL.put("ttWaitingL", saveLinkedList(tt));
+        waitingL.put("lbWaitingL", saveLinkedList(lb));
+        waitingL.put("sgWaitingL", saveLinkedList(sg));
+
+        JSONObject salesR = new JSONObject();
+        for(int i = 0; i < Main.salesRecord.size(); i++){
+            ArrayList<Object> tempArr = Main.salesRecord.get(i);
+            String tempStr = "";
+            for(int j = 0; j < tempArr.size(); j++){
+                tempStr += tempArr.get(j).toString() + ",";
+            }
+            salesR.put(Integer.toString(i),tempStr);
+        }
+
+        JSONObject menu = new JSONObject();
+        menu.put("jgMenu", saveLinkedList(jadeGardenFood));
+        menu.put("cdmMenu", saveLinkedList(cafeMagotsFood));
+        menu.put("ttMenu", saveLinkedList(trattoriaFood));
+        menu.put("lbMenu", saveLinkedList(liberrioFood));
+        menu.put("sgMenu", saveLinkedList(savageGardenFood));
+
+        JSONArray saveFile = new JSONArray();
+        saveFile.add(day);                  //index = 0
+        saveFile.add(map);                  //index = 1
+        saveFile.add(visitedLoc);           //index = 2
+        saveFile.add(waitingL);             //index = 3
+        saveFile.add(salesR);               //index = 4
+        saveFile.add(menu);                 //index = 5
+
+        try(FileWriter writer = new FileWriter(fileName)){
+            writer.write(saveFile.toJSONString());
+            writer.flush();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private static JSONObject saveLinkedList(LinkedList<ArrayList<String>> linkedList){
+        JSONObject tempJSON = new JSONObject();
+        for(int i = 0; i < linkedList.size(); i++){
+            ArrayList<String> tempArr = linkedList.get(i);
+            String tempStr = "";
+            for(int j = 0; j < tempArr.size(); j++){
+                tempStr += tempArr.get(j) + ",";
+            }
+            tempJSON.put(Integer.toString(i),tempStr);
+        } return tempJSON;
     }
 }

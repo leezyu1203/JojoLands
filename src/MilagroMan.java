@@ -79,7 +79,7 @@ public class MilagroMan extends Main{
                         if(currentLocation.getName().equals("Jade Garden")){
                             calculateTotalPriceMilagro(jadeMenu,milagroRecord, day);
                         }
-                        if(currentLocation.getName().equals("Libeccio")){
+                        if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                             calculateTotalPriceMilagro(libeccioMenu,milagroRecord, day);
                         }
 
@@ -115,7 +115,7 @@ public class MilagroMan extends Main{
                                         if(currentLocation.getName().equals("Jade Garden")){
                                             displayMinSalesMilagro(jadeMenu,milagroRecord, startDay, endDay);
                                         }
-                                        if(currentLocation.getName().equals("Libeccio")){
+                                        if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                             displayMinSalesMilagro(libeccioMenu,milagroRecord, startDay, endDay);
                                         }
                                     break;
@@ -133,7 +133,7 @@ public class MilagroMan extends Main{
                                         if(currentLocation.getName().equals("Jade Garden")){
                                             displayMaxSalesMilagro(jadeMenu,milagroRecord, startDay, endDay);
                                         }
-                                        if(currentLocation.getName().equals("Libeccio")){
+                                        if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                             displayMaxSalesMilagro(libeccioMenu,milagroRecord, startDay, endDay);
                                         }
                                     break;
@@ -158,7 +158,7 @@ public class MilagroMan extends Main{
                                         if(currentLocation.getName().equals("Jade Garden")){
                                             topSalesMilagro(jadeMenu,milagroRecord, startDay, endDay, top);
                                         }
-                                        if(currentLocation.getName().equals("Libeccio")){
+                                        if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                             topSalesMilagro(libeccioMenu,milagroRecord, startDay, endDay, top);
                                         }
                                     break;
@@ -177,7 +177,7 @@ public class MilagroMan extends Main{
                                         if(currentLocation.getName().equals("Jade Garden")){
                                             calculateAverageMilagro(jadeMenu,milagroRecord, startDay, endDay);
                                         }
-                                        if(currentLocation.getName().equals("Libeccio")){
+                                        if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                             calculateAverageMilagro(libeccioMenu,milagroRecord, startDay, endDay);
                                         }
                                     break;
@@ -226,7 +226,7 @@ public class MilagroMan extends Main{
                                     jadeMenu.addAll(jadeGardenFood);
                                     MilagroPrices.clear();
                                     MilagroPrices.putAll(foodPrices);
-                                }else if(currentLocation.getName().equals("Libeccio")){
+                                }else if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                     System.out.println("Exiting Milagro Man Mode");
                                     libeccioMenu.clear();
                                     libeccioMenu.addAll(liberrioFood);

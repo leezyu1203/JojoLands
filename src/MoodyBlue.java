@@ -55,7 +55,7 @@ public class MoodyBlue extends Main{
                     if(currentLocation.getName().equals("Jade Garden")){
                         calculateTotalPrice(jadeGardenFood,salesRecord, day);
                     }
-                    if(currentLocation.getName().equals("Libeccio")){
+                    if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                         calculateTotalPrice(liberrioFood,salesRecord, day);
                     }
                     break;
@@ -90,7 +90,7 @@ public class MoodyBlue extends Main{
                                 if(currentLocation.getName().equals("Jade Garden")){
                                     displayMinSales(jadeGardenFood,salesRecord, startDay, endDay);
                                 }
-                                if(currentLocation.getName().equals("Libeccio")){
+                                if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                     displayMinSales(liberrioFood,salesRecord, startDay, endDay);
                                 }
                                 break;
@@ -108,7 +108,7 @@ public class MoodyBlue extends Main{
                                 if(currentLocation.getName().equals("Jade Garden")){
                                     displayMaxSales(jadeGardenFood,salesRecord, startDay, endDay);
                                 }
-                                if(currentLocation.getName().equals("Libeccio")){
+                                if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                     displayMaxSales(liberrioFood,salesRecord, startDay, endDay);
                                 }
                                 break;
@@ -133,7 +133,7 @@ public class MoodyBlue extends Main{
                                 if(currentLocation.getName().equals("Jade Garden")){
                                     topSales(jadeGardenFood,salesRecord, startDay, endDay, top);
                                 }
-                                if(currentLocation.getName().equals("Libeccio")){
+                                if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Pasionne Restaurant")){
                                     topSales(liberrioFood,salesRecord, startDay, endDay, top);
                                 }
                                 break;
@@ -152,7 +152,7 @@ public class MoodyBlue extends Main{
                                 if(currentLocation.getName().equals("Jade Garden")){
                                     calculateAverage(jadeGardenFood,salesRecord, startDay, endDay);
                                 }
-                                if(currentLocation.getName().equals("Libeccio")){
+                                if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                                     calculateAverage(liberrioFood,salesRecord, startDay, endDay);
                                 }
                                 break;
