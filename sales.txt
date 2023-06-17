@@ -1,52 +1,62 @@
-1 Narciso Anasui Poached Tofu with Dried Shrimps 12.00 
-1 Reimi Sugimoto Deep-fried Hiroshima Oyster 17.00 
-1 Terunosuke Miyamoto Poached Tofu with Dried Shrimps 12.00 
-1 Prosciutto Braised Chicken in Black Bean Sauce 15.00 
-1 Ungalo Scrambled Egg White with Milk 10.00 
-1 Aya Tsuji Braised Chicken in Black Bean Sauce 15.00 
-1 Tonio Trussardi Deep-fried Hiroshima Oyster 17.00 
-1 Illuso Braised Goose Web with Vermicelli 21.00 
-1 Toyohiro Kanedaichi Scrambled Egg White with Milk 10.00 
-1 Joseph Joestar Braised Goose Web with Vermicelli 21.00 
-1 Rohan Kishibe Spring Lobster Salad 35.00 
-1 Mikitaka Hazekura White Asparagus 26.00 
-1 Hayato Kawajiri Sampling Matured Cheese Platter 23.00 
-1 Yoshikage Kira White Asparagus 26.00 
-1 Muhammad Avdol Sampling Matured Cheese Platter 23.00 
-1 Yuya Fungami Sampling Matured Cheese Platter 23.00 
-1 Tomoko Higashikata White Asparagus 26.00 
-1 Noriaki Kakyoin Spring Lobster Salad 35.00 
-1 Melone Spring Lobster Salad 35.00 
-1 Shigekiyo Yangu Caprese Salad 10.00 
-1 Koichi Hirose Spaghetti alla Puttanesca 15.00 
-1 Pesci Lamb Chops with Apple Sauce 25.00 
-1 Formaggio Lamb Chops with Apple Sauce 25.00 
-1 Foo Fighters Caprese Salad 10.00 
-1 Mario Zucchero Creme caramel 6.50 
-1 Emporio Alnino Spaghetti alla Puttanesca 15.00 
-1 Masazo Kinoto Spaghetti alla Puttanesca 15.00 
-1 Vanilla Ice Caprese Salad 10.00 
-1 Enya the Hag Lamb Chops with Apple Sauce 25.00 
-1 Leone Abbacchio Caprese Salad 10.00 
-1 Trish Una Lamb Chops with Apple Sauce 25.00 
-1 Carne Zucchero and Sale 0.60 
-1 Cioccolata Risotto 13.14 
-1 Tamami Kobayashi Risotto 13.14 
-1 Lisa Lisa Prosciutto and Pesci 20.23 
-1 Ermes Costello Melone 5.20 
-1 Iggy Formaggio 12.50 
-1 Guido Mista Prosciutto and Pesci 20.23 
-1 Jonathan Joestar Formaggio 12.50 
-1 Suzi Q. Kakyoin's Porridge 4.44 
-1 Weather Report Joseph's Tequila 35.00 
-1 Yoshihiro Kira DIO's Bread 36.14 
-1 Erina Pendleton Kakyoin's Porridge 4.44 
-1 Yukako Yamagishi Joseph's Tequila 35.00 
-1 Jolyne Cujoh Joseph's Tequila 35.00 
-1 Narancia Ghirga DIO's Bread 36.14 
-1 Donatello Versus Joseph's Tequila 35.00 
-1 Josuke Higashikata DIO's Bread 36.14 
-1 Toshikazu Hazamada Abbacchio's Tea 1.00 
-1 Bruno Bucciarati Kakyoin's Porridge 4.44 
-1 Risotto Nero Abbacchio's Tea 1.00 
-1 Okuyasu Nijimura Abbacchio's Tea 1.00 
+1 Narancia Ghirga Deep-fried Hiroshima Oyster 17.00 
+1 Pesci Poached Tofu with Dried Shrimps 12.00 
+1 Reimi Sugimoto Scrambled Egg White with Milk 10.00 
+1 Josuke Higashikata Deep-fried Hiroshima Oyster 17.00 
+1 Akira Otoishi Deep-fried Hiroshima Oyster 17.00 
+1 Joseph Joestar Braised Chicken in Black Bean Sauce 15.00 
+1 Jolyne Cujoh Braised Chicken in Black Bean Sauce 15.00 
+1 Hayato Kawajiri Poached Tofu with Dried Shrimps 12.00 
+1 Mario Zucchero Braised Chicken in Black Bean Sauce 15.00 
+1 Emporio Alnino Deep-fried Hiroshima Oyster 17.00 
+1 Aya Tsuji Poached Tofu with Dried Shrimps 12.00 
+1 Ken Oyanagi Scrambled Egg White with Milk 10.00 
+1 Cioccolata Truffle-flavoured Poultry Supreme 34.00 
+1 DIO Truffle-flavoured Poultry Supreme 34.00 
+1 Narciso Anasui Sampling Matured Cheese Platter 23.00 
+1 Erina Pendleton Spring Organic Omelette 23.00 
+1 Enrico Pucci Sampling Matured Cheese Platter 23.00 
+1 Secco White Asparagus 26.00 
+1 Jonathan Joestar Sampling Matured Cheese Platter 23.00 
+1 Prosciutto White Asparagus 26.00 
+1 Formaggio Truffle-flavoured Poultry Supreme 34.00 
+1 Yoshihiro Kira Sampling Matured Cheese Platter 23.00 
+1 George Joestar II Spring Organic Omelette 23.00 
+1 Diavolo Truffle-flavoured Poultry Supreme 34.00 
+1 Anjuro Katagiri Sampling Matured Cheese Platter 23.00 
+1 Shigekiyo Yangu Spaghetti alla Puttanesca 15.00 
+1 Risotto Nero Lamb Chops with Apple Sauce 25.00 
+1 Yukako Yamagishi Spaghetti alla Puttanesca 15.00 
+1 Iggy Lamb Chops with Apple Sauce 25.00 
+1 Toyohiro Kanedaichi Creme caramel 6.50 
+1 Tonio Trussardi Caprese Salad 10.00 
+1 Rohan Kishibe Lamb Chops with Apple Sauce 25.00 
+1 Terunosuke Miyamoto Spaghetti alla Puttanesca 15.00 
+1 Okuyasu Nijimura Lamb Chops with Apple Sauce 25.00 
+1 Weather Report Creme caramel 6.50 
+1 Yoshikage Kira Creme caramel 6.50 
+1 Squalo Lamb Chops with Apple Sauce 25.00 
+1 Vanilla Ice Prosciutto and Pesci 20.23 
+1 Masazo Kinoto Zucchero and Sale 0.60 
+1 Lisa Lisa Melone 5.20 
+1 Leone Abbacchio Risotto 13.14 
+1 Toshikazu Hazamada Melone 5.20 
+1 Melone Melone 5.20 
+1 Donatello Versus Zucchero and Sale 0.60 
+1 Tizzano Risotto 13.14 
+1 Keicho Nijimura Ghiaccio 1.01 
+1 Muhammad Avdol Formaggio 12.50 
+1 Illuso Zucchero and Sale 0.60 
+1 Jotaro Kujo Formaggio 12.50 
+1 Suzi Q. Joseph's Tequila 35.00 
+1 Jean Pierre Polnareff DIO's Bread 36.14 
+1 Holy Kujo Kakyoin's Cherry 3.50 
+1 Ermes Costello Kakyoin's Porridge 4.44 
+1 Tamami Kobayashi DIO's Bread 36.14 
+1 Bruno Bucciarati Kakyoin's Cherry 3.50 
+1 Ghiaccio Kakyoin's Cherry 3.50 
+1 Trish Una Kakyoin's Cherry 3.50 
+1 Tomoko Higashikata Kakyoin's Cherry 3.50 
+1 Mikitaka Hazekura Kakyoin's Cherry 3.50 
+1 Noriaki Kakyoin DIO's Bread 36.14 
+1 Foo Fighters Giorno's Donuts 6.66 
+1 Ungalo DIO's Bread 36.14 

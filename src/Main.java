@@ -23,20 +23,31 @@ public class Main {
         boolean isLoad = false;
         System.out.println("Welcome to the fantastical realm of JOJOLands.");
         System.out.println("[1] Start Game\n[2] Load Game\n[3] Exit\n");
-        System.out.print("Select: ");
         Scanner sc = new Scanner(System.in);
-        int keyIn = sc.nextInt();
-        if(keyIn == 3){
-            System.out.println("Exiting the Game...");
-            System.exit(0);
-        }
-        if (keyIn == 2) {
-            sc.nextLine();
-            System.out.print("Enter the path of your save file: ");
-            String fileName = sc.nextLine();
-            setLoadedGame(fileName);
-            setWaitingL(fileName);
-            isLoad = true;
+        while(true){
+            System.out.print("Select: ");
+            if(sc.hasNextInt()){
+                int select = sc.nextInt();
+                if(select == 3){
+                    System.out.println("Exiting the Game...");
+                    System.exit(0);
+                    break;
+                } else if(select == 2) {
+                    sc.nextLine();
+                    System.out.print("Enter the path of your save file: ");
+                    String fileName = sc.nextLine();
+                    setLoadedGame(fileName);
+                    isLoad = true;
+                    break;
+                } else if(select != 1){
+                    System.out.println();
+                    System.out.println("*Invalid input. Please enter from 1 to 3.*");
+                } else break;
+            } else{
+                System.out.println();
+                System.out.println("*Invalid input. Please enter a numeric value.*\n");
+                sc.next();
+            }
         }
         System.out.println("========================================================================");
         if (mapSelection == 0) {
@@ -53,7 +64,6 @@ public class Main {
         }
         System.out.println("It's Day " + (currentDay) + " (" + getDayOfWeek(currentDay) + ") of our journey in JOJOLands!");
         currentLocation = townHall;
-        setMenu();
         if (isLoad) {
             for (int i = 0; i < temp.size(); i++) {
                 for(int j = 0; j < locations.size(); j++){
@@ -65,9 +75,10 @@ public class Main {
                     }
                 }
             }
-        } else visit.addFirst(townHall);
-        setPrice();
-        if(!isLoad) {
+        } else{
+            visit.addFirst(townHall);
+            setMenu();
+            setPrice();
             WaitList wl = new WaitList();
             TownHall.jg = wl.jgWaitList(1);
             TownHall.cdm = wl.cdmWaitList(1);
@@ -280,64 +291,43 @@ public class Main {
         trattoriaFood.add(new ArrayList<>(Arrays.asList("Creme caramel", "6.50")));
         trattoriaFood.add(new ArrayList<>(Arrays.asList("Lamb Chops with Apple Sauce", "25.00")));
         trattoriaFood.add(new ArrayList<>(Arrays.asList("Spaghetti alla Puttanesca", "15.00")));
-        
+
         cafeMenu.add(new ArrayList<>(Arrays.asList("Sampling Matured Cheese Platter", "23.00")));
         cafeMenu.add(new ArrayList<>(Arrays.asList("Spring Lobster Salad", "35.00")));
         cafeMenu.add(new ArrayList<>(Arrays.asList("Spring Organic Omelette", "23.00")));
         cafeMenu.add(new ArrayList<>(Arrays.asList("Truffle-flavoured Poultry Supreme", "34.00")));
         cafeMenu.add(new ArrayList<>(Arrays.asList("White Asparagus", "26.00")));
-        
+
         jadeMenu.add(new ArrayList<>(Arrays.asList("Braised Chicken in Black Bean Sauce", "15.00")));
         jadeMenu.add(new ArrayList<>(Arrays.asList("Braised Goose Web with Vermicelli", "21.00")));
         jadeMenu.add(new ArrayList<>(Arrays.asList("Deep-fried Hiroshima Oyster", "17.00")));
         jadeMenu.add(new ArrayList<>(Arrays.asList("Poached Tofu with Dried Shrimps", "12.00")));
         jadeMenu.add(new ArrayList<>(Arrays.asList("Scrambled Egg White with Milk", "10.00")));
-        
+
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Formaggio", "12.50")));
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Ghiaccio", "1.01")));
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Melone", "5.20")));
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Prosciutto and Pesci", "20.23")));
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Risotto", "13.14")));
         libeccioMenu.add(new ArrayList<>(Arrays.asList("Zucchero and Sale", "0.60")));
-        
+
         savageMenu.add(new ArrayList<>(Arrays.asList("Abbacchio's Tea", "1.00")));
         savageMenu.add(new ArrayList<>(Arrays.asList("DIO's Bread", "36.14")));
         savageMenu.add(new ArrayList<>(Arrays.asList("Giorno's Donuts", "6.66")));
         savageMenu.add(new ArrayList<>(Arrays.asList("Joseph's Tequila", "35.00")));
         savageMenu.add(new ArrayList<>(Arrays.asList("Kakyoin's Cherry", "3.50")));
         savageMenu.add(new ArrayList<>(Arrays.asList("Kakyoin's Porridge", "4.44")));
-        
+
         trattoriaMenu.add(new ArrayList<>(Arrays.asList("Caprese Salad", "10.00")));
         trattoriaMenu.add(new ArrayList<>(Arrays.asList("Creme caramel", "6.50")));
         trattoriaMenu.add(new ArrayList<>(Arrays.asList("Lamb Chops with Apple Sauce", "25.00")));
         trattoriaMenu.add(new ArrayList<>(Arrays.asList("Spaghetti alla Puttanesca", "15.00")));
-        
-        foodList.add(new ArrayList<>(Arrays.asList("Sampling Matured Cheese Platter", "23.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Spring Lobster Salad", "35.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Spring Organic Omelette", "23.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Truffle-flavoured Poultry Supreme", "34.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("White Asparagus", "26.00")));  
-        foodList.add(new ArrayList<>(Arrays.asList("Braised Chicken in Black Bean Sauce", "15.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Braised Goose Web with Vermicelli", "21.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Deep-fried Hiroshima Oyster", "17.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Poached Tofu with Dried Shrimps", "12.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Scrambled Egg White with Milk", "10.00")));        
-        foodList.add(new ArrayList<>(Arrays.asList("Formaggio", "12.50")));
-        foodList.add(new ArrayList<>(Arrays.asList("Ghiaccio", "1.01")));
-        foodList.add(new ArrayList<>(Arrays.asList("Melone", "5.20")));
-        foodList.add(new ArrayList<>(Arrays.asList("Prosciutto and Pesci", "20.23")));
-        foodList.add(new ArrayList<>(Arrays.asList("Risotto", "13.14")));
-        foodList.add(new ArrayList<>(Arrays.asList("Zucchero and Sale", "0.60")));      
-        foodList.add(new ArrayList<>(Arrays.asList("Abbacchio's Tea", "1.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("DIO's Bread", "36.14")));
-        foodList.add(new ArrayList<>(Arrays.asList("Giorno's Donuts", "6.66")));
-        foodList.add(new ArrayList<>(Arrays.asList("Joseph's Tequila", "35.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Kakyoin's Cherry", "3.50")));
-        foodList.add(new ArrayList<>(Arrays.asList("Kakyoin's Porridge", "4.44")));    
-        foodList.add(new ArrayList<>(Arrays.asList("Caprese Salad", "10.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Creme caramel", "6.50")));
-        foodList.add(new ArrayList<>(Arrays.asList("Lamb Chops with Apple Sauce", "25.00")));
-        foodList.add(new ArrayList<>(Arrays.asList("Spaghetti alla Puttanesca", "15.00")));
+
+        foodList.addAll(cafeMagotsFood);
+        foodList.addAll(jadeGardenFood);
+        foodList.addAll(trattoriaFood);
+        foodList.addAll(liberrioFood);
+        foodList.addAll(savageGardenFood);
     }
     
     public static void setPrice(){
@@ -367,33 +357,8 @@ public class Main {
         foodPrices.put("Creme caramel", "6.50");
         foodPrices.put("Lamb Chops with Apple Sauce", "25.00");
         foodPrices.put("Spaghetti alla Puttanesca", "15.00");
-        
-        MilagroPrices.put("Sampling Matured Cheese Platter", "23.00");
-        MilagroPrices.put("Spring Lobster Salad", "35.00");
-        MilagroPrices.put("Spring Organic Omelette", "23.00");
-        MilagroPrices.put("Truffle-flavoured Poultry Supreme", "34.00");
-        MilagroPrices.put("White Asparagus", "26.00");  
-        MilagroPrices.put("Braised Chicken in Black Bean Sauce", "15.00");
-        MilagroPrices.put("Braised Goose Web with Vermicelli", "21.00");
-        MilagroPrices.put("Deep-fried Hiroshima Oyster", "17.00");
-        MilagroPrices.put("Poached Tofu with Dried Shrimps", "12.00");
-        MilagroPrices.put("Scrambled Egg White with Milk", "10.00");        
-        MilagroPrices.put("Formaggio", "12.50");
-        MilagroPrices.put("Ghiaccio", "1.01");
-        MilagroPrices.put("Melone", "5.20");
-        MilagroPrices.put("Prosciutto and Pesci", "20.23");
-        MilagroPrices.put("Risotto", "13.14");
-        MilagroPrices.put("Zucchero and Sale", "0.60");      
-        MilagroPrices.put("Abbacchio's Tea", "1.00");
-        MilagroPrices.put("DIO's Bread", "36.14");
-        MilagroPrices.put("Giorno's Donuts", "6.66");
-        MilagroPrices.put("Joseph's Tequila", "35.00");
-        MilagroPrices.put("Kakyoin's Cherry", "3.50");
-        MilagroPrices.put("Kakyoin's Porridge", "4.44");    
-        MilagroPrices.put("Caprese Salad", "10.00");
-        MilagroPrices.put("Creme caramel", "6.50");
-        MilagroPrices.put("Lamb Chops with Apple Sauce", "25.00");
-        MilagroPrices.put("Spaghetti alla Puttanesca", "15.00");
+
+        MilagroPrices = new HashMap<>(foodPrices);
     }
 
     public static void extractInfo(){
@@ -454,7 +419,7 @@ public class Main {
                 temp.add((String) visitedLoc.get(Character.toString(alphabet)));
                 alphabet++;
             }
-            JSONObject saleR = (JSONObject) savedFile.get(8);
+            JSONObject saleR = (JSONObject) savedFile.get(4);
             for(int i = 0; i < saleR.size(); i++){
                 String str = (String) saleR.get(Integer.toString(i));
                 String[] arr = str.split(",");
@@ -465,138 +430,33 @@ public class Main {
                 tempArr.add(Double.valueOf(arr[3]));
                 salesRecord.add(tempArr);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
-    private static void setWaitingL(String fileName){
-        JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader(fileName)) {
-            Object obj = jsonParser.parse(reader);
-            JSONArray savedFile = (JSONArray) obj;
-            JSONObject jgWaitingL = (JSONObject) savedFile.get(3);
-            TownHall.jg = new LinkedList<>();
-            for(int i = 0; i < jgWaitingL.size(); i++){
-                String str = (String) jgWaitingL.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                TownHall.jg.add(tempArr);
-            }
-            JSONObject cdmWaitingL = (JSONObject) savedFile.get(4);
-            TownHall.cdm = new LinkedList<>();
-            for(int i = 0; i < cdmWaitingL.size(); i++){
-                String str = (String) cdmWaitingL.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                TownHall.cdm.add(tempArr);
-            }
-            JSONObject ttWaitingL = (JSONObject) savedFile.get(5);
-            TownHall.tt = new LinkedList<>();
-            for(int i = 0; i < ttWaitingL.size(); i++){
-                String str = (String) ttWaitingL.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                TownHall.tt.add(tempArr);
-            }
-            JSONObject lbWaitingL = (JSONObject) savedFile.get(6);
-            TownHall.lb = new LinkedList<>();
-            for(int i = 0; i < lbWaitingL.size(); i++){
-                String str = (String) lbWaitingL.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                TownHall.lb.add(tempArr);
-            }
-            JSONObject sgWaitingL = (JSONObject) savedFile.get(7);
-            TownHall.sg = new LinkedList<>();
-            for(int i = 0; i < sgWaitingL.size(); i++){
-                String str = (String) sgWaitingL.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                TownHall.sg.add(tempArr);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
+            JSONObject waitingL = (JSONObject) savedFile.get(3);
+            TownHall.jg = loadJSONObj((JSONObject) waitingL.get("jgWaitingL"));
+            TownHall.cdm = loadJSONObj((JSONObject) waitingL.get("cdmWaitingL"));
+            TownHall.tt = loadJSONObj((JSONObject) waitingL.get("ttWaitingL"));
+            TownHall.lb = loadJSONObj((JSONObject) waitingL.get("lbWaitingL"));
+            TownHall.sg = loadJSONObj((JSONObject) waitingL.get("sgWaitingL"));
 
-    private static void loadMenu(String fileName){
-        JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader(fileName)) {
-            Object obj = jsonParser.parse(reader);
-            JSONArray savedFile = (JSONArray) obj;
-            JSONObject jgMenu = (JSONObject) savedFile.get(9);
-            for(int i = 0; i < jgMenu.size(); i++){
-                String str = (String) jgMenu.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                jadeGardenFood.add(tempArr);
-            }
-            JSONObject cdmMenu = (JSONObject) savedFile.get(10);
-            for(int i = 0; i < cdmMenu.size(); i++){
-                String str = (String) cdmMenu.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                cafeMagotsFood.add(tempArr);
-            }
-            JSONObject ttMenu = (JSONObject) savedFile.get(11);
-            for(int i = 0; i < ttMenu.size(); i++){
-                String str = (String) ttMenu.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                trattoriaFood.add(tempArr);
-            }
-            JSONObject lbMenu = (JSONObject) savedFile.get(12);
-            for(int i = 0; i < lbMenu.size(); i++){
-                String str = (String) lbMenu.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                liberrioFood.add(tempArr);
-            }
-            JSONObject sgMenu = (JSONObject) savedFile.get(7);
-            for(int i = 0; i < sgMenu.size(); i++){
-                String str = (String) sgMenu.get(Integer.toString(i));
-                String[] arr = str.split(",");
-                ArrayList<String> tempArr = new ArrayList<>();
-                for(int j = 0; j < arr.length; j++){
-                    tempArr.add(arr[j]);
-                }
-                savageGardenFood.add(tempArr);
-            }
+            JSONObject menu = (JSONObject) savedFile.get(5);
+            jadeGardenFood = loadJSONObj((JSONObject) menu.get("jgMenu"));
+            cafeMagotsFood = loadJSONObj((JSONObject) menu.get("cdmMenu"));
+            trattoriaFood = loadJSONObj((JSONObject) menu.get("ttMenu"));
+            liberrioFood = loadJSONObj((JSONObject) menu.get("lbMenu"));
+            savageGardenFood = loadJSONObj((JSONObject) menu.get("sgMenu"));
+            jadeMenu = loadJSONObj((JSONObject) menu.get("jgMenu"));
+            cafeMenu = loadJSONObj((JSONObject) menu.get("cdmMenu"));
+            trattoriaMenu = loadJSONObj((JSONObject) menu.get("ttMenu"));
+            libeccioMenu = loadJSONObj((JSONObject) menu.get("lbMenu"));
+            savageMenu = loadJSONObj((JSONObject) menu.get("sgMenu"));
+            foodList.addAll(cafeMagotsFood);
+            foodList.addAll(jadeGardenFood);
+            foodList.addAll(trattoriaFood);
+            foodList.addAll(liberrioFood);
+            foodList.addAll(savageGardenFood);
+
+            foodPrices = loadHashMap((JSONObject) savedFile.get(6));
+            MilagroPrices = new HashMap<>(foodPrices);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -604,9 +464,27 @@ public class Main {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+    private static LinkedList<ArrayList<String>> loadJSONObj (JSONObject jsonObject){
+        LinkedList<ArrayList<String>> tempList = new LinkedList<>();
+        for(int i = 0; i < jsonObject.size(); i++){
+            String str = (String) jsonObject.get(Integer.toString(i));
+            String[] arr = str.split(",");
+            ArrayList<String> tempArr = new ArrayList<>();
+            for(int j = 0; j < arr.length; j++){
+                tempArr.add(arr[j]);
+            }
+            tempList.add(tempArr);
+        } return tempList;
+    }
+    private static HashMap<Object,Object> loadHashMap (JSONObject jsonObject){
+        HashMap<Object,Object> tempMap = new HashMap<>();
+        for(int i = 0; i < jsonObject.size(); i++){
+            String tempStr = (String) jsonObject.get(Integer.toString(i));
+            String[] tempArr = tempStr.split(",");
+            tempMap.put(tempArr[0],tempArr[1]);
+        }
+        return tempMap;
     }
 }
-
-
-
 

@@ -15,8 +15,7 @@ public class MilagroMan extends Main{
         System.out.println("["+num+"] View Sales Information");
         num++;
         System.out.println("["+num+"] Exit Milagro Man");
-        
-        System.out.print("\n\nSelection: ");
+
         Scanner sc = new Scanner(System.in);
         int select;
         System.out.println("\n");
@@ -38,29 +37,29 @@ public class MilagroMan extends Main{
         if (select==1){          
             menu.MilagroDisplay();
             menu.MilagroFoodMod();
-                }
+        }
         else if (select == 2){
-               boolean going1 = true;
-               while(going1){
-                   int MilagroNum = 1;
-                        System.out.println("Restaurant: " + currentLocation);
-                        System.out.println("Sales Information");
-                        System.out.println("["+MilagroNum+"] View Sales");
-                        MilagroNum++;
-                        System.out.println("["+MilagroNum+"] View Aggregated Information");
-                        MilagroNum++;
-                            System.out.println("\t[A] Minimum Sales");
-                            System.out.println("\t[B] Maximum Sales");
-                            System.out.println("\t[C] Top k Highest Sales"); //top 3,5,10
-                            System.out.println("\t[D] Total and Average Sales");
-                            System.out.println("["+MilagroNum+"] Exit");
-        
-                            System.out.print("\n\nSelect: ");
-                            Scanner sc5 = new Scanner(System.in);
-                            int selection = sc5.nextInt();
-                            if (selection >= 1 && selection<=MilagroNum){
-                                System.out.println("========================================================================");
-                            }
+            boolean going1 = true;
+            while(going1){
+                int MilagroNum = 1;
+                System.out.println("Restaurant: " + currentLocation);
+                System.out.println("Sales Information");
+                System.out.println("["+MilagroNum+"] View Sales");
+                MilagroNum++;
+                System.out.println("["+MilagroNum+"] View Aggregated Information");
+                MilagroNum++;
+                System.out.println("\t[A] Minimum Sales");
+                System.out.println("\t[B] Maximum Sales");
+                System.out.println("\t[C] Top k Highest Sales"); //top 3,5,10
+                System.out.println("\t[D] Total and Average Sales");
+                System.out.println("["+MilagroNum+"] Exit");
+
+                System.out.print("\n\nSelect: ");
+                Scanner sc5 = new Scanner(System.in);
+                int selection = sc5.nextInt();
+                if (selection >= 1 && selection<=MilagroNum){
+                    System.out.println("========================================================================");
+                }
                 switch(selection){
                     case 1:
                         System.out.print("\nEnter Day: ");
@@ -82,9 +81,8 @@ public class MilagroMan extends Main{
                         if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
                             calculateTotalPriceMilagro(libeccioMenu,milagroRecord, day);
                         }
-
                         break;
-            
+
                     case 2:
                         System.out.print("Select: ");
                         Scanner scOption = new Scanner(System.in);
@@ -99,7 +97,6 @@ public class MilagroMan extends Main{
                         int selectedOption = option.charAt(0) - 'A';
 
                         if (selectedOption >= 0 && selectedOption < 4){
-
                             switch(selectedOption){
                                 case 0:
                                     System.out.println("Minimum Sales for Day "+startDay+" to Day "+endDay+" is ");
@@ -184,62 +181,59 @@ public class MilagroMan extends Main{
                                 default:
                                     System.out.println("Invalid choice. Please try again.");
 
-                                    }
-
-                                }
-                            case 3:
-                                going1 = false;
-                                break;
-
-                            default: 
-                                System.out.println("========================================================================");
-                                System.out.println("Invalid choice. Please try again.");
-
+                            }
                         }
-                            System.out.println("========================================================================");
-                    }
+                    case 3:
+                        going1 = false;
+                        break;
 
-                        }
-                        else if (select == 3){
-                            going = false;
-                                if(currentLocation.getName().equals("Trattoria Trussardi")){
-                                    System.out.println("Exiting Milagro Man Mode");
-                                    trattoriaMenu.clear();
-                                    trattoriaMenu.addAll(trattoriaFood);
-                                    MilagroPrices.clear();
-                                    MilagroPrices.putAll(foodPrices);
-                                }else if(currentLocation.getName().equals("Cafe Deux Magots")){
-                                    System.out.println("Exiting Milagro Man Mode");
-                                    cafeMenu.clear();
-                                    cafeMenu.addAll(cafeMagotsFood);
-                                    MilagroPrices.clear();
-                                    MilagroPrices.putAll(foodPrices);
-                                }else if(currentLocation.getName().equals("Savage Garden")){
-                                    System.out.println("Exiting Milagro Man Mode");
-                                    savageMenu.clear();
-                                    savageMenu.addAll(savageGardenFood);
-                                    MilagroPrices.clear();
-                                    MilagroPrices.putAll(foodPrices);
-                                }else if(currentLocation.getName().equals("Jade Garden")){
-                                    System.out.println("Exiting Milagro Man Mode");
-                                    jadeMenu.clear();
-                                    jadeMenu.addAll(jadeGardenFood);
-                                    MilagroPrices.clear();
-                                    MilagroPrices.putAll(foodPrices);
-                                }else if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
-                                    System.out.println("Exiting Milagro Man Mode");
-                                    libeccioMenu.clear();
-                                    libeccioMenu.addAll(liberrioFood);
-                                    MilagroPrices.clear();
-                                    MilagroPrices.putAll(foodPrices);
-                                }
-                        }
-                        else {
-                                System.out.println("Invalid choice. Please try again.");
+                    default:
+                        System.out.println("========================================================================");
+                        System.out.println("Invalid choice. Please try again.");
 
-                        }
-                    }
+                }
+                System.out.println("========================================================================");
+            }
 
+        }
+        else if (select == 3){
+            going = false;
+            if(currentLocation.getName().equals("Trattoria Trussardi")){
+                System.out.println("Exiting Milagro Man Mode");
+                trattoriaMenu.clear();
+                trattoriaMenu.addAll(trattoriaFood);
+                MilagroPrices.clear();
+                MilagroPrices.putAll(foodPrices);
+            }else if(currentLocation.getName().equals("Cafe Deux Magots")){
+                System.out.println("Exiting Milagro Man Mode");
+                cafeMenu.clear();
+                cafeMenu.addAll(cafeMagotsFood);
+                MilagroPrices.clear();
+                MilagroPrices.putAll(foodPrices);
+            }else if(currentLocation.getName().equals("Savage Garden")){
+                System.out.println("Exiting Milagro Man Mode");
+                savageMenu.clear();
+                savageMenu.addAll(savageGardenFood);
+                MilagroPrices.clear();
+                MilagroPrices.putAll(foodPrices);
+            }else if(currentLocation.getName().equals("Jade Garden")){
+                System.out.println("Exiting Milagro Man Mode");
+                jadeMenu.clear();
+                jadeMenu.addAll(jadeGardenFood);
+                MilagroPrices.clear();
+                MilagroPrices.putAll(foodPrices);
+            }else if(currentLocation.getName().equals("Libeccio") || currentLocation.getName().equals("Passione Restaurant")){
+                System.out.println("Exiting Milagro Man Mode");
+                libeccioMenu.clear();
+                libeccioMenu.addAll(liberrioFood);
+                MilagroPrices.clear();
+                MilagroPrices.putAll(foodPrices);
+            }
+        }
+        else {
+                System.out.println("Invalid choice. Please try again.");
+        }
+    }
 
 }
     public static void calculateTotalPriceMilagro(LinkedList<ArrayList<String>> foodList, LinkedList<ArrayList<Object>> salesRecord, String day) {

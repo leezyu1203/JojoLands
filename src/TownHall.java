@@ -181,6 +181,12 @@ public class TownHall extends Main {
         menu.put("lbMenu", saveLinkedList(liberrioFood));
         menu.put("sgMenu", saveLinkedList(savageGardenFood));
 
+        JSONObject foodP = new JSONObject();
+        String[] tempArr = hashMapToArr(foodPrices);
+        for(int i = 0; i < tempArr.length; i++){
+            foodP.put(Integer.toString(i), tempArr[i]);
+        }
+
         JSONArray saveFile = new JSONArray();
         saveFile.add(day);                  //index = 0
         saveFile.add(map);                  //index = 1
@@ -188,6 +194,7 @@ public class TownHall extends Main {
         saveFile.add(waitingL);             //index = 3
         saveFile.add(salesR);               //index = 4
         saveFile.add(menu);                 //index = 5
+        saveFile.add(foodP);                //index = 6
 
         try(FileWriter writer = new FileWriter(fileName)){
             writer.write(saveFile.toJSONString());
@@ -207,5 +214,15 @@ public class TownHall extends Main {
             }
             tempJSON.put(Integer.toString(i),tempStr);
         } return tempJSON;
+    }
+    private static String[] hashMapToArr(HashMap<Object,Object> hashMap){
+        StringBuilder builder = new StringBuilder();
+        for(Map.Entry<Object,Object> entry : hashMap.entrySet()){
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            builder.append(key).append(",").append(value).append("\n");
+        } String tempStr = builder.toString();
+        String[] tempArr = tempStr.split("\n");
+        return tempArr;
     }
 }
